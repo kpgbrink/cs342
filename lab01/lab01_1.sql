@@ -1,0 +1,38 @@
+-- Exercise 1.1
+-- a.
+SELECT * 
+FROM DEPARTMENTS;
+
+--b.
+SELECT COUNT(*)
+FROM EMPLOYEES;
+
+--c
+--i.
+SELECT *
+FROM EMPLOYEES
+WHERE EMPLOYESS.salary > 15000;
+--ii
+SELECT *
+FROM EMPLOYEES
+WHERE EMPLOYEES.hire_date >= 2002 and EMPLOYEES.hire_date <=2004;
+--iii
+SELECT *
+FROM EMPLOYEES
+WHERE EMPLOYEES.phone_number NOT LIKE 515%;
+
+--d.
+SELECT EMPLOYEES.first_name || EMPLOYEES.last_name
+FROM EMPLOYEES, DEPARTMENTS
+WHERE EMPLOYEES.department_id = DEPARTMENTS.department_id and DEPARTMENTS.department_name = 'Finance'
+ORDER BY EMPLOYEES.first_name ASC;
+
+--e.
+SELECT LOCATIONS.city, LOCATIONS.state_province 
+FROM LOCATIONS, COUNTRIES, REGIONS
+WHERE LOCATIONS.country_id = COUNTRIES.country_id AND COUNTRY.region_id = REGIONS.region_id AND REGIONS.region_name = 'Asia';
+
+--f
+SELECT LOCATIONS
+FROM LOCATIONS
+WHERE LOCATIONS.state_province is NULL;
