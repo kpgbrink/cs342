@@ -6,7 +6,7 @@ Create a second command file, lab\lab01_2.sql, with your explanation in SQL comm
 */
 
 /* 
-In dual there is one column defined to be VARCHAR2(1). There is one row with a value X.
+In dual there is one column defined to be VARCHAR2(1). There is one row with a value X. One might use it to see if they are properly connected to the database.
 */
 
 SELECT *
