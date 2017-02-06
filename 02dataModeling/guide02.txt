@@ -1,0 +1,31 @@
+﻿1. Chapter 5 (focus primarily on Sections 5.1–5.2)
+   1. Who invented the relational data model? When and where did they do their work?
+Ted Codd. IBM. 1970.
+   2. Explain the following terms:
+   1. Relation : a table of attributes and values
+   2. Attribute : Column header
+   3. Domain : possible values in column
+   4. N-tuple : ordered list of n values. record/tuple.
+   5. NULL value : values which are used to represent the values of attributes that may be unknown or may not apply to a tuple. 
+   6. primary, foreign, candidate and super keys : primary- key for relation it is in. only on key. candidate- if more than one key super keys- similar to candidate but the minimum amount of keys that uniquely identify each row.
+   7. referenced and referencing records : referenced- record that is has id pointing to it from another one. Referencing- having id pointing to other record.
+   1. Are tuples in a relation ordered? How about attribute values in a tuple? Explain why or why not.
+Tuples in a relation: Not ordered. Elements in a set do not have order among them and there is no reason to have them ordered.
+Attribute Values in a tuple: Ordered. In order to match values with an attribute they are ordered.
+   2. Can attributes have multiple values in a single n-tuple? Why or why not?
+No, because there is only a certain amount of allocated space for each value.
+      1. Chapter 6 (focus primarily on Sections 6.1–6.2 & 6.4) — Make sure that you know how to:
+      1. Create tables with specified constraints, including primary/foreign key, not-null, domain and value-check constraints.
+CREATE TABLE COMPANY.EMPLOYEE
+(
+Employee_id int PRIMARY_KEY,
+Boss_id int FOREIGN_KEY,
+Kris int CHECK (Kris > 4)
+)
+      2. Use the DML commands: INSERT, DELETE and UPDATE.
+INSERT INTO CUSTOMERS VALUES (5, 3, 4);
+DELETE FROM CUSTOMERS WHERE ID = 8;
+UPDATE CUSTOMERS SET PHONE = 61645423454 WHERE ID = 3;
+      3. Distinguish the ON DELETE actions: SET NULL; CASCADE.
+SET NULL: Value of the affected referencing attributes is changed to NULL.
+CASCADE: Delete all referencing tuples.

@@ -1,0 +1,20 @@
+﻿Kristofer Brink
+Work through the following materials, recording answers to the questions so that you can bring them to class and submit them for review.
+1. Chapter 1
+   1. Compare and contrast data, databases, database (management) systems and information systems.
+Databases is a collection of data. Database management systems is software that manage how databases store and retrieve data. Information systems is an organized system for using information.
+   2. Compare and contrast database systems with the following, using the main characteristics of the database approach in your discussion.
+   * data structures and algorithms
+Database systems is the software used to implement both data structures and algorithms. Database systems makes it easier to structure and make algorithms that make the database useful.
+   * traditional file systems
+File systems take longer to make. 6 to 4 times longer. Traditional file systems repository of data is not defined once and is not made to be accessed and changed by many users at once.
+      1. Identify the stakeholders of database systems.
+The people who run the companies and invest in it and the users of the product.
+         1. Chapter 2
+         1. Explain the significance of the categories of data models. Which type of model is displayed in Figure 2.1?
+Categories of data models is the different ways data models can be shown. Some are made for the people making the database and some for the stakeholders or people that do not understand databases as much. Figure 2.1 is a Schema Diagram.
+         2. Explain the structure and significance of the three-schema architecture.
+The three-schema architecture separates the user applications from the physical database. There is a conceptual scheme before the internal schema which is before the actual database.
+         3. Explain the tiers used in a typical web-based information system.
+First is the GUI, the user experience. Second is the web server. Third is the database.
+https://shelf.brytewave.com/?cm_mmc=utm_source=OrderConfirm&utm_medium=DigitalURL&utm_campaign=EFTRANS&term=1462/#/
