@@ -1,0 +1,8 @@
+Exercise 2.13
+	college(id, name, address)
+	course(id, name, title, collegeId)
+	section(id, letter, prof, time, credit_hours, courseId)
+	-- adding login
+	user(id, name, username, password);
+	user_sampleSchedule(userId, sampleScheduleId);
+	sampleSchedule(id, sectionId)

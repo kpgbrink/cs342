@@ -1,0 +1,3 @@
+Exercise 1.14
+a. PREREQUISITE.Course_number, PREREQUISITE.Prerequisite_number, SECTION.Course_number, COURSE.Course_number, COURSE.Department, STUDENT.Major.
+b. No because course numbers of other majors could overlap without the prefix like CS or Math. If a course name changes then a lot of Columns need to be updated and that cannot be avoided.
