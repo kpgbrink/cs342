@@ -1,0 +1,10 @@
+﻿Vision. 
+I want to make a database system for a school scheduler. It would include logging in and making your own schedule. Basically a customizable 
+schedule that is looks like slatepermutate but you can make a page that links you to important things for school. You would be able to choose
+a schedule, add links to the classes. Add links to important things for school like, moodle, portal, and online textbooks. 
+        
+The stakeholders would be Calvin Students because they could use it to make it easier to keep on schedule and find the websites for 
+their classes online. I have already made something similar to this but without a database and logins.
+
+
+Example: http://sam.ohnopub.net/~kpgbrink/2016/fall/
