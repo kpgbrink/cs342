@@ -8,6 +8,7 @@
 DROP TABLE Casting;
 DROP TABLE Movie;
 DROP TABLE Performer;
+DROP TABLE Status;
 
 -- Create database schema
 CREATE TABLE Movie (
@@ -29,7 +30,7 @@ CREATE TABLE Performer (
 CREATE TABLE Status (
 	id integer,
 	castTypeName varchar(35),
-	PRIMARY KEY (id),
+	PRIMARY KEY (id)
 	);
 
 CREATE TABLE Casting (
@@ -45,8 +46,6 @@ CREATE TABLE Casting (
 
 -- The benefits is that you can change what a status is called whenever you want and 
 -- you can easily add a new status.
-
-
 
 
 -- Load sample data

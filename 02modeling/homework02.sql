@@ -9,6 +9,14 @@
 --  drive the queries specified below, so it’s probably wise to look through the queries
 --  so that you will have non-empty and non-NULL results for each of them.
 
+DROP TABLE SHIPMENT;
+DROP TABLE WAREHOUSE;
+DROP TABLE ORDER_ITEM;
+DROP TABLE ITEM;
+DROP TABLE "ORDER";
+DROP TABLE CUSTOMER;
+
+
 CREATE TABLE CUSTOMER(
     Id INT NOT NULL PRIMARY KEY,
     Cname VARCHAR(64) NOT NULL,
@@ -86,7 +94,7 @@ INSERT INTO SHIPMENT VALUES (3, 3, DATE '2017-03-03');
 
 --      a. For natural keys you could use the person's name and graduation date and
 --         age and maybe parents. Even with all of that as the natural key it still would
---         not neccessarily always be unique.I would not use a natural key because there 
+--         not neccessarily always be unique. I would not use a natural key because there 
 --         is a chance it would not be unique and a surrogate key makes more sense in 
 --         this situation.
 --      c. Making a surrogate key makes clashes for uniqueness hard to happen. 
