@@ -5,6 +5,7 @@
 
 -- Exercise 3.1
 
+drop table Request;
 drop table HomegroupTopic;
 drop table Topic;
 drop table PersonHouseHold;
@@ -78,6 +79,20 @@ create table PersonTeam (
     foreign key (Teamid) references Team(ID) on delete cascade
 );
 
+-- why would the date be the key? I didn't do it like that
+-- request can onlyo have one response.
+create table Request (
+	householdId integer,
+	personId integer,
+	requestDate date,
+	text varchar(255),
+	requestAccess varchar(64),
+	response varchar(64),
+	foreign key (houseHoldId) references HouseHold(ID) on delete cascade,
+	foreign key (PersonId) references Person(ID) on delete set null
+);
+
+
 INSERT INTO Household VALUES (0,'2347 Oxford Dr. SE','Grand Rapids','MI','49506','616-243-5680');
 
 INSERT INTO Homegroup VALUES (0, 'Group0', 0);
@@ -99,3 +114,8 @@ INSERT INTO Team VALUES (1, 'B Team');
 INSERT INTO PersonTeam VALUES (0,0,'Hitman', date '2017-02-12', date '2017-05-07');
 INSERT INTO PersonTeam VALUES (0,1,'Maker', date '2017-04-12', date '2017-05-09');
 INSERT INTO PersonTeam VALUES (1,0,'Destroyer', date '2017-02-1', date '2017-05-01');
+
+INSERT INTO Request VALUES (0, 0, date '2017-03-23', 'I want food', 'everyone', 'My food not yours');
+INSERT INTO Request VALUES (0,1, date '2017-03-23', 'I want frisbee', 'everyone', 'I have that');
+
+
