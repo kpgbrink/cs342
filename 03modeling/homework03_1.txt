@@ -1,0 +1,15 @@
+1.
+
+a. A flight can have multiple flight legs. A flight leg is from take of to landing, so a flight 
+   can go to multiple airports. A leg instance is a flight leg on a certain date, so there can be
+   multiple take of and landings from the same flight leg at different times.
+   
+b. Dotted underline means it is a "partial key". Weak entities have only a "partial key". 
+
+c. The database modelers made the constraint {1,*} on the "LEG_INSTANCE" so there can be
+   multiple reservations for each "LEG_INSTANCE". The "SEAT" entity has a total participation so
+   a seat cannot exist without referencing a reservation and there can also be multiple seats. 
+   The purpose of this is to make seats not exist without a reservation.
+   
+   
+   
