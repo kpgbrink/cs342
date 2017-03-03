@@ -1,0 +1,40 @@
+1. Exercise 14.31
+
+BOOK (Book_title, Author_name, Book_type, List_price, Author_affil, Publisher);
+
+Book_title --> Publisher, Book_type
+Book_type --> List_Price
+Author_name --> Author_affil
+
+a. What normal form is the relation in? Explain your answer.
+
+	This satisfies 1NF because the domain of each attribute contains indivisible values. 
+	This does not satisfy BCNF because there are multiple non-trivail functional dependencies in the relation. 
+	This does not satisfy 4th normal form because it is not in BCNF.
+
+b. Apply normalization until you cannot decompose the relations further. State the reasons behind each decomposition.
+
+	BOOK (id, Book_title, Author_id, Publisher); -- I added an id because book titles can be the same.
+
+	AUTHOR (id, name, affil); -- I added an author relation because Author_name --> Author_affil.
+
+	BOOK_TYPE (book_id, type, list_price); -- I added a book type relation because Book_type --> List_price.
+
+
+	-- These added relations make this data easier to use because the candidate key is the only one with non-trivial funcitonal
+	   dependencies. So this is in BCNF and this is also in 4NF.
+
+2. Exercise 14.35
+
+	a. Book_Name, Author, and Edition. 
+
+	b. Given a book for every possible edition and copy right year you have the same authors for the given book. {Book} -> {Author}
+	   Given a book for every possible author you have the same set of editions and years for the given book. {Book} -> {Edition, Year}
+
+	c. Author(book_name, Name); -- 4NF because book_name, name is a superkey. Since the whole row is a super key it is in 4NF.
+           Edition(book_name, Edition, year); -- 4NF because book_name, edition is a superkey and year is an attribute. 
+
+
+	   
+
+
