@@ -9,6 +9,7 @@
 
 DROP TABLE PersonTeam;
 DROP TABLE PersonVisit;
+DROP TABLE ViewTable;
 
 CREATE TABLE PersonTeam (
 	personName varchar(10),
@@ -59,6 +60,20 @@ WHERE pt.personName = pv.personName;
 -- Choice does not depend on context because you can get the second table from the first so if you want to view it as that way it is possible.
 
 
+
+-- Homework 4
+CREATE TABLE ViewTable (
+    personName varchar(10),
+    teamName varchar(10),
+    personVisit date
+);
+
+INSERT INTO ViewTable SELECT pt.personName, pt.teamName, pv.personVisit
+FROM PersonTeam pt, PersonVisit pv
+WHERE pt.personName = pv.personName;
+
+
+SELECT * FROM ViewTable;
 
 
 
