@@ -12,8 +12,6 @@
 
 -- Create the user.
 DROP USER kpb23 CASCADE;
-CREATE USER kpb23 
-	IDENTIFIED BY bjarne;
 GRANT 
 	CONNECT,
 	CREATE TABLE,
@@ -24,7 +22,8 @@ GRANT
 	CREATE PROCEDURE,
 	CREATE TRIGGER,
 	UNLIMITED TABLESPACE
-	TO kpb23;
+	TO kpb23
+	IDENTIFIED BY bjarne;
 
 -- Connect to the user's account/schema.
 CONNECT kpb23/bjarne;
