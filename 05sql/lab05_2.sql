@@ -35,7 +35,6 @@ and p.id not in (
 );
 
 -- correlated subquery
-
 SELECT p.firstName, p.lastName
 From Person p
 Join PersonTeam pt on p.id = pt.personId
