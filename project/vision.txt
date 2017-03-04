@@ -1,6 +1,10 @@
 ﻿Vision. 
-I want to make a database for a website I will make to go along with it. This website will let you make a useful webpage using a link to a schedule from slatepermutate. With the schedule you will be able to add links to the class webpages. You will also be able to include links to important places like moodle, and portal. 
+I want to make a database for a website I will make to go along with it. 
+This website will let you make a useful webpage using a link to a schedule from slatepermutate. 
+With the schedule you will be able to add links to the class webpages. 
+You will also be able to include links to important places like moodle, and portal. 
         
-The stakeholders would be Calvin Students because it would be designed for them. I already have an example of this but without using a database.
+The stakeholders would be Calvin Students because it would be designed for them. 
+I already have an example of this but without using a database.
 
 Example: http://sam.ohnopub.net/~kpgbrink/2016/fall/
