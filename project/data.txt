@@ -1,0 +1,18 @@
+-- a one-paragraph discussion of where you got your data.
+	
+	I got my data from generatedata.com. Since the data is going to be all user made I thought
+	using fake data for the initial test would be good enough. I would like to use better fake data
+	but what I have will work for testing.
+
+-- a one-paragraph discussion identifying/justifying your chosen normal form.
+	
+	This database for my webapp uses 4NF. This was chosen because BCNF does prevent
+	a lot of repitition in the database and prevents too many nulls. 4NF is a step above BCNF
+	and it makes sure that repitition of data from MVD does not occur. 
+
+-- a demonstration that your schema satisfies your chosen normal form.
+
+	Every relation satisfies 1NF because all columns have indivisble values. These relations satisfy
+	BCNF because every non-trivial functional dependency is in one relation and the ids are on 
+	the left. Also everything without an id has multiple foreign keys that together are a primary
+	key. This satisfies 4NF because MVDs are seperated.
