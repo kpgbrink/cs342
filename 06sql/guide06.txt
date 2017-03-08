@@ -1,0 +1,24 @@
+
+-- As in the last unit, work through the following materials writing one sample 
+-- query for each mechanism using the modified version of the movies database 
+-- (see code/06sql/guide06.sql).
+
+-- a. Implement an inner join (Secion 7.1.6).
+-- default join
+select * 
+from Movie m
+inner join Casting c on m.id = c.movieId;
+
+-- b. Implement an outer join (Section 7.1.6).
+select *
+from Movie m
+left outer join Casting c on m.id = c.movieId;
+
+-- c. Use an aggregate function (Section 7.1.7).
+select sum(m.score)
+from Movie m;
+
+-- d. Use grouping (Section 7.1.8).
+select c.status, max(c.movieId)
+from Casting c
+group by c.status;
