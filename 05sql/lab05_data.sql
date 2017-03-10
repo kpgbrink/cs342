@@ -19,7 +19,7 @@ INSERT INTO Team VALUES ('Side-door','plan and run side-door ministeries');
 INSERT INTO Team VALUES ('Staff','run the place');
 
 INSERT INTO Person VALUES (0,'mr.','Keith','VanderLinden','m','m','07-FEB-1961',0,'husband',0,'member');
-INSERT INTO Person VALUES (1,'ms.','Brenda','VanderLinden','m','f','24-DEC-1960',0,'wife',0,'leader');
+INSERT INTO Person VALUES (1,'ms.','Brenda','Roorda','m','f','24-DEC-1960',0,'wife',0,'leader');
 INSERT INTO Person VALUES (2,NULL,'Lukas','VanderLinden','c','m','16-MAR-1990',0,'child',0,'child');
 INSERT INTO Person VALUES (3,NULL,'Christian','VanderLinden','c','m','24-JUL-2015',0,'child',0,'child');
 INSERT INTO Person VALUES (4,'mr.','Doug','Jones','m','m',NULL,1,'husband',2,'leader');
