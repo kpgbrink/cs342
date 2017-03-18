@@ -27,7 +27,7 @@ select * from
 --    If the department has no manager, include it in the output with NULL values for the manager 
 --    and title.
 select d.department_name, e.first_name || ' ' || e.last_name as Manager, j.job_title from Departments d 
-	right outer join Employees e on d.department_id = e.department_id
+	left outer join Employees e on d.department_id = e.department_id
 	join Jobs j on j.job_id = e.job_id;
 
 -- d. The name of each department along with the average salary of the employees of that 
