@@ -1,0 +1,9 @@
+-- Kristofer Brink
+
+a. Write an equivalent query in the relational algebra.
+
+	projection firstName, lastName, birthdate (Selection 1961 <= p.birthdate <= 1975)
+
+b. Write an equivalent query in the tuple relational calculus.
+
+	{p.firstName, p.lastName, p.birthdate | Person(p) and 1961 <= p.birthdate <= 1975}
