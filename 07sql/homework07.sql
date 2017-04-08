@@ -37,7 +37,7 @@ values ('Bobby', 'Bob', 'bob@gmail.com', '03-JUN-23', 'Payroll');
 -- 2. Redo the previous exercise with a materialized view.
 
 -- create view
-create MATERIALIZED view employeeMaterializedView as
+create or replace MATERIALIZED view employeeMaterializedView as
 select e.employee_id, e.first_name, e.last_name, e.email, e.hire_date, d.department_name
 from EMPLOYEES e, DEPARTMENTS d
 where e.department_id = d.department_id;
@@ -72,14 +72,14 @@ drop materialized view employeeMaterializedView;
 --    the relational algebra and tuple relational calculus, with respect to the original HR relations.
 
 -- algebra
--- PI_firstName, lastName, employee_id, email, hire_date, department_name (theta Employee(department_id) = Department(department_id D)))
+
+-- PI_firstName, lastName, employee_id, email, hire_date, department_name (p_e(Employees) (join)_e.employee_id=d.employee_id p_d(Departments))
 
 -- calculus
--- {e.employee_id, e.first_name, e.last_name, e.email, e.hire_date, d.department_name | Employee(e), Department(d) ^ e.department_id = d.department_id}
+-- {e.employee_id, e.first_name, e.last_name, e.email, e.hire_date, d.department_name | Employee(e) ^ Department(d) ^ e.department_id = d.department_id}
 
 
 -- b) The query from exercise 1.a - Write this query using (only) the relational calculus, with respect to DeptView.
-
--- {first_name, last_name, employee_id |  employeeView ^ rowNum = 1}
+-- {first_name, last_name, employee_id | DeptView(dv) ^ dv.department_name='Executive' ^ ¬Edv2(DeptView(dv2) ^ dv2.department='Executive' ^ dv2.hire_date>dv1.hire_date)}
 
 

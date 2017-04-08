@@ -1,6 +1,5 @@
 -- Kristofer Brink
 
-@load
 
 -- create new view
 create view birthday_Czar as
