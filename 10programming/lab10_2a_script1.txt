@@ -1,0 +1,9 @@
+
+-- I don't know how to make an integer for storing things so I made a table...
+create table storeRank (
+	intRank integer primary key
+);
+
+insert into storeRank select rank from movie where id = 238071;
+
+update movie m set rank = m.rank+1 where m.id = 238071;
