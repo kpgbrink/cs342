@@ -18,36 +18,34 @@ create table baconTable (
 
 create or replace procedure baconNumber (baseActorId integer, depthLevel integer) as
     checkbaseactor integer;
-    checkbacontable integer;
 begin
     -- check if baseActor is in the database.
     -- Does bacon exist?
     select count(*) into checkBaseActor from Actor where id = baseActorId;
     if checkBaseActor = 0 then
-        raise_application_error(-20000, 'Base actor does not exist of id ' || baseActorId);
+        raise_application_error(-20000, 'Base actor ' || baseActorId || ' does not exist');
     end if;
     
     -- Insert Bacon 0. The Actor everyone is connected to.
     insert into BaconTable values (baseActorId, 0);
     
     -- loop through the bacon a certain depth amount.
-    for i in 1..depthLevel loop
+    for i in 0..depthLevel loop
         -- add the actors to the table that are connected to someone in the i depth
-        for actor in (select actorId
-                      from role 
-                      where movieId in 
-                      (select movieId from baconTable where baconNumber = i)) loop
-            select count(*) into checkbacontable from baconTable where actorId = actor.actorId;
-            if checkbacontable = 0 then
-                insert into baconTable values (actor.actorId, i);
-            end if;
-        end loop;
+        insert into BaconTable
+        select distinct r.actorId, i+1
+        from role r
+        where movieId in (select r.movieId 
+                       from baconTable bt
+                       join role r on bt.actorId = r.actorId)
+        and r.actorId not in (select br.actorId from baconTable br); 
+     
     end loop;
 end;
 /
 show errors;
 
-begin baconNumber(22591, 10); end;
+begin baconNumber(22591, 4); end;
 /
 
 select * from baconTable;
