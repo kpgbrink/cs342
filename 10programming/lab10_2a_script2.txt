@@ -1,0 +1,31 @@
+C:\WINDOWS\system32>sqlplus imdb/bjarne
+
+SQL*Plus: Release 11.2.0.2.0 Production on Thu Apr 13 00:29:52 2017
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> set autocommit on;
+SQL> select rank from Movie where id = 238071;
+
+      RANK
+----------
+       9.2
+
+SQL> update movie m set rank = 9.2+0.2 where m.id = 238071;
+
+1 row updated.
+
+Commit complete.
+SQL> select rank from Movie where id = 238071;
+
+      RANK
+----------
+       9.4
+
+SQL>
+
+-- the update should end up being 9.6 after adding 0.2 two times to the rank we get. But it is 9.4.

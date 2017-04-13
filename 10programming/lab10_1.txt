@@ -14,4 +14,6 @@ a. Does Oracle handle the transaction life-cycle (see Figure 20.4)
 b. Can we implement any of the ACID properties using
    START-TRANSACTION/SAVEPOINT/ROLLBACK/COMMIT?
    
-   No because you need locking. Without locking you can have problems like lost update.
+   No because you need locking. Without locking you can have problems like lost update. Locking
+   ensures that problems of two programs accessing something and then updating on it don't update on
+   the wrong variables and where only one update is complete.

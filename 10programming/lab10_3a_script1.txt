@@ -1,0 +1,21 @@
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> set autocommit off;
+SQL> lock table movie in exclusive mode;
+
+Table(s) Locked.
+
+SQL> update movie m set rank = 9.4+0.2 where m.id = 238071;
+
+1 row updated.
+
+SQL> select rank from Movie where id = 238071;
+
+      RANK
+----------
+       9.6
+
+SQL>
+
+-- updated and prevented other session from updating.

@@ -1,0 +1,20 @@
+SQL*Plus: Release 11.2.0.2.0 Production on Thu Apr 13 00:36:55 2017
+
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> set autocommit off;
+SQL> select rank from movie m where m.id = 238071;
+
+      RANK
+----------
+       9.4
+
+SQL> update movie m set rank = 9.4+0.2 where m.id = 238071;
+^C
+C:\WINDOWS\system32>
+
+-- cannot update. Table is locked.

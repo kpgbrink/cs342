@@ -1,9 +1,31 @@
+C:\WINDOWS\system32>sqlplus imdb/bjarne
 
--- I don't know how to make an integer for storing things so I made a table...
-create table storeRank (
-	intRank integer primary key
-);
+SQL*Plus: Release 11.2.0.2.0 Production on Thu Apr 13 00:29:54 2017
 
-insert into storeRank select rank from movie where id = 238071;
+Copyright (c) 1982, 2014, Oracle.  All rights reserved.
 
-update movie m set rank = m.rank+1 where m.id = 238071;
+
+Connected to:
+Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+
+SQL> set autocommit on;
+SQL> select rank from Movie where id = 238071;
+
+      RANK
+----------
+       9.2
+
+SQL> update movie m set rank = 9.2+0.2 where m.id = 238071;
+
+1 row updated.
+
+Commit complete.
+SQL> select rank from Movie where id = 238071;
+
+      RANK
+----------
+       9.4
+
+SQL>
+
+-- the update should end up being 9.6 after adding 0.2 two times to the rank we get. But it is 9.4.
