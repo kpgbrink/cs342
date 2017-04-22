@@ -3,8 +3,14 @@ Exercise 11.1
 c. Exploring the project structure — How do the external libraries 
 (in the project pane) relate to J2SE and J2EE?
 
+-- The external libraries are jdk1.8 and GlassFish 4.1.1. 
+-- The jdk library relate to J2SE is the base of java. 
+-- J2EE is the Java Enterprise Edition and relates to GlassFish. 
+
 d. Developing source code — Set the HTML title and body 
 content to whatever you’d like. At what tier does this application run?
+
+-- GlassFish runs on the server tier.
 
 e. Running the application &
 Modifying the code and observing the changes —
@@ -12,11 +18,25 @@ What server does this step use to serve up your application?
 For a hint, look at what’s served up at the URL: /.
 How does it compare with a typical web server?
 
+-- This runs a glassfish server. locally it uses localhost:8080.
+
 f. Exploring a run configuration &
 Exploring an artifact configuration — Skim through 
 these sections, making sure that you can find the 
 application features they discuss. What is a WAR file?
 
+-- Stands for Web application Archive. Is a jar file used to distribute Java based files and XML.
+
 g. What’s the difference between “exploded” and non-exploded WAR files?
 
+-- exploded is non zipped. non-exploded is zipped.
+
 h. Compare and contrast EAR and WAR artifacts.
+
+-- Ear stands for Enterprise Application aRchive. All files in war are packaged as JAR files with .ear extension. 
+
+Exercise 11.2
+
+b. What library does this application use for REST support?
+
+-- GlassFish
