@@ -2,20 +2,30 @@
 a. Compare and contrast the store.put() command used here for KVLite 
    and the em.persist() command you used for the GlassFish entity manager 
    in the previous lab.
-
 	
+   	KVLITE store.put() - makes a new key-value pair.
+	GlassFish em.persist() - creates new entity but does not update.
 
 b. Compare and contrast the store.put() command
    with the standard Java hashtable’s myHashTable.put() command.
 
+	Both create or update.
 
 13.2
 a. Compare and contrast KVLite keys with relational database keys.
 
+	relational database keys point to an entire row but KVLite 
+        keys only point to one value in an key and doesn't seem to restrict 
+        what you can do as much as a relational database.
 
 13.3
 a. So far, the implementation has only dealt with records in one relational table,
-   Movie. Explain how a key-value database might implement the one-to-many join relationships commonly implemented in relational databases using foreign keys.
+   Movie. Explain how a key-value database might implement the one-to-many join
+   relationships commonly implemented in relational databases using foreign keys.
+
+	A key-value can but put in each of the many side in a one to many that points to the one.
 
 b. KVLite requires that there be a key, but it is possible to have an
    “empty” value. Such a value can be created using Value.createValue(new byte[0]). Where might one need such a construct?
+
+	Similar use of a null value.
