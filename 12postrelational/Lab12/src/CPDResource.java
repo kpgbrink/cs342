@@ -61,11 +61,55 @@ public class CPDResource {
      *
      * @return a list of all person records
      */
-    @GET
-    @Path("people")
+    @PUT
+    @Path("person/{x}")
+    @Consumes("models/person")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Person> getPeople() {
-        return em.createQuery(em.getCriteriaBuilder().createQuery(Person.class)).getResultList();
+    public String putPerson(@PathParam("x") long id, Person p) {
+        if (em.find(Person.class, id) == null) {
+            return "Person not found";
+        } else {
+            em.merge(p);
+            return "Successful update of person: " + p.getFirstname() + " " + p.getLastname();
+        }
     }
 
+    /*
+     * Homework 12
+     */
+    @PUT
+    @Path("people/{x}")
+    @Consumes("models/person")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String putPerson(@PathParam("x") long id, Person p) {
+        if (em.find(Person.class, id) == null) {
+            return "Person not found";
+        } else {
+            em.merge(p);
+            return "Successful update of person: " + p.getFirstname() + " " + p.getLastname();
+        }
+    }
+
+    @POST
+    @Path("people/")
+    @Consumes("models/person")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String postPerson(Person p) {
+        em.persist(p);
+        return "Successful post";
+    }
+
+    @DELETE
+    @Path("people/{x}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public String deletePerson(@PathParam("x") long id) {
+        Person p = em.find(Person.class, id);
+        if (p == null) {
+            return "Person not found: " + id;
+        } else {
+            em.remove(p);
+            return "Deleted person of id: " + id;
+        }
+    }
+    
 }

@@ -18,6 +18,33 @@ public class Person {
     private Time birthdate;
     private String householdrole;
     private String homegrouprole;
+    
+    /*
+     * ManyToOne — Add a new field of type Household to the 
+     * Person entity class, add the accessor methods (getName() 
+     * & setName()) and annotate its get accessor as follows.
+     */
+    @ManyToOne
+    @JoinColumn(name = "householdid", referencedColumnName = "id")
+    private Household household;
+
+    public Household getHousehold() { return household; }
+    public void setHousehold(Household new_household) { this.household = new_household; }
+    
+    /*
+     * ManyToMany — Add a new list of Team entities to the 
+     * Person entity class, add the accessor methods for this 
+     * list attribute and annotate its get accessor as follows.
+     */  
+     
+    @ManyToMany
+    @JoinTable(name = "PERSONTEAM", schema = "CPDB",
+                joinColumns = @JoinColumn(name = "PERSONID", referencedColumnName = "ID", nullable = false),
+                inverseJoinColumns = @JoinColumn(name = "TEAMNAME", referencedColumnName = "NAME", nullable = false))
+    private List<Team> teams;
+    
+    public List<Team> getTeamList() { return teams; }
+    public void setTeamList(List<Team> new_teamList) { this.teams = new_teamList; }
 
     @Id
     @Column(name = "ID")

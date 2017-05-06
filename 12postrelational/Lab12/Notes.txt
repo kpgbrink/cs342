@@ -1,4 +1,39 @@
+
+12.1
 1. Compare and contrast the database connection you built in Guide 12 (in Intellij IDEA) 
    and this database connection (in GlassFish). Do we need both? If so, explain why; if not, explain why not.
 
+	Yes we need both. The one in Guide 12 isn't good for a real website.
 
+12.2
+1. How does Intellij map the database tables into Java entity classes?
+
+	Intellij uses the database schema.
+
+2. What does the PK class do?
+
+	Primary Key class. Use for making entity classes.
+
+3. Does Intellij default to field or property annotations?
+
+	Field annotations.
+
+
+12.3
+1. Does this application perform marshalling? If so, explain what the marshalling does; if not, explain why it’s not needed.
+
+	Marshmellowing is the process of transforming memory representation of an object to data for storage and transmission. JSON.
+	Yes it does.
+
+2. Does this code perform any injection? Again, explain…
+
+	No. Injection is bad?
+
+3. What does the entity manager do in this code, if anything?
+
+	Handles the persistence context.
+
+12.4
+1. How does JPA return the household and team entities related to a given person?
+
+	Sends raw SQL.
