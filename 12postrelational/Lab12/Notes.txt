@@ -1,0 +1,4 @@
+1. Compare and contrast the database connection you built in Guide 12 (in Intellij IDEA) 
+   and this database connection (in GlassFish). Do we need both? If so, explain why; if not, explain why not.
+
+
