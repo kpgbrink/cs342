@@ -19,7 +19,7 @@ CREATE OR REPLACE PROCEDURE getSequels (movieIdIn IN Movie.id%type) as
   cursor sequel is
     select id, name
     from movie
-    where id = (select sequelid from movie where id = movieIdIn)
+    where id = (select sequelid from movie where id = movieIdIn);
 begin
     -- loops through all sequels from cursor and adds more recurively
     for i in sequel loop
