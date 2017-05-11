@@ -1,0 +1,17 @@
+a. What type of noSQL database system is Oracle’s NoSQL product, KVLite?
+
+    key-value. It's in the name.
+
+b. The Internet Movie DataBase (imdb.com) is currently implemented in mySQL. If you were required to port it to a noSQL system, which of the noSQL system types would you suggest? Explain your answer.
+
+    MongoDB because I have the most experience with it and it is popular. It is also free and open-source. It has a nice document model and I think it would be good
+    for a movie database.
+
+c. Could you (efficiently) reuse the same key-value structure for exercise 13.1.d (above) and its “opposite”, i.e., get the movies in which a given actor is cast? Why or why not?
+
+    No because you would have to switch which is the key and the value.
+
+d. NoSQL databases are often referred to as schema-less or schema-free. Explain what this means using examples from your homework solution.
+
+    Schemaless database lets you store items in collections with different sets of properties.
+    It allows new features without restructuring the database which is what these queries are doing.
