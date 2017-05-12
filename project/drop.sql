@@ -1,5 +1,6 @@
 
 -- drop tables in reverse order of them made.
+drop view ImportLinks;
 drop table FriendGroup_Student;
 drop table FriendGroup_Schedule;
 drop table FriendGroup;

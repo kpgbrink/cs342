@@ -1,4 +1,3 @@
-
 -- delete a user 
 -- a lot of things need to be deleted when a user is deleted.
 create or replace procedure deleteUser(userId in integer) as

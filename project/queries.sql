@@ -1,23 +1,9 @@
-
-
--- 3 major queries
-
 -- a join of at least four tables - done
 -- proper comparisons of NULL values - done
 -- a self-join using tuple variables - done
--- a combination of inner and outer joins
+-- a combination of inner and outer joins - done
 -- a nested select statement - done
 -- aggregate statistics on grouped data - done
-
-
--- Get a big dump of information on schedules users have made.
-select s.*, sbr.*, pah.*
-from Schedule s
-join Schedule_SideBarLink ssbr on s.id = ssbr.schedule_id
-join SideBarLink sbr on ssbr.sidebarlink_id = sbr.id
-join Schedule_PlaceAndHours spah on s.id = spah.schedule_id
-join PlaceAndHours pah on spah.placeAndHours_id = pah.id
-where sbr.id is not null;
 
 -- Find amount of people in a group by id
 select friendGroup_id, count(friendGroup_id)
@@ -29,8 +15,8 @@ select count(*)
 from Student s 
 where s.email is not Null;
 
--- Join all people who have the same last name. Good for finding families.
-select s.lastName
+-- Find all people who have the same last name. Good for finding families.
+select s.id, s.firstName, s.lastName
 from Student s, Student st
 where s.lastName = st.lastName and s.id <> st.id;
 
@@ -40,12 +26,21 @@ from Student s
 where s.id in (select sf.student_id
             from StudentFriend sf);
             
--- show all people and their friends if they have any
-select s.*, f.*
+-- show all people and their friend relationships
+select s.firstname, f.firstname as Friend
 from Student s
-left outer join StudentFriend sf on s.id = sf.student_id
+join StudentFriend sf on s.id = sf.student_id
 join Student f on sf.student_friend_id = f.id;
 
+-- Find the ids of all the information related to one schedule. Usefull for loading a schedule.
+-- With current data it should all be the same number
+select s.id, sbr.id, pah.id
+from Schedule s
+left outer join Schedule_SideBarLink ssbr on s.id = ssbr.schedule_id
+join SideBarLink sbr on ssbr.sidebarlink_id = sbr.id
+left outer join Schedule_PlaceAndHours spah on s.id = spah.schedule_id
+join PlaceAndHours pah on spah.placeAndHours_id = pah.id
+where sbr.id is not null;
 
 -- This is a important link view
 -- it gets all unique class links for every class

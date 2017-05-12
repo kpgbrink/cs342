@@ -107,7 +107,6 @@ INSERT INTO StudentFriend (student_id,student_friend_id) VALUES (1,99);
 INSERT INTO StudentFriend (student_id,student_friend_id) VALUES (3,98);
 INSERT INTO StudentFriend (student_id,student_friend_id) VALUES (4,97);
 INSERT INTO StudentFriend (student_id,student_friend_id) VALUES (5,96);
-INSERT INTO StudentFriend (student_id,student_friend_id) VALUES (6,95);
 INSERT INTO StudentFriend (student_id,student_friend_id) VALUES (7,94);
 INSERT INTO StudentFriend (student_id,student_friend_id) VALUES (8,93);
 INSERT INTO StudentFriend (student_id,student_friend_id) VALUES (9,92);

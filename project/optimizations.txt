@@ -1,0 +1,67 @@
+
+SQL> explain plan for
+  2  select s.firstname, f.firstname as Friend
+  3  from Student s
+  4  join StudentFriend sf on s.id = sf.student_id
+  5  join Student f on sf.student_friend_id = f.id;
+
+Explained.
+
+SQL> SELECT PLAN_TABLE_OUTPUT FROM TABLE(DBMS_XPLAN.DISPLAY());
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+Plan hash value: 4067671403
+
+--------------------------------------------------------------------------------
+-----
+
+| Id  | Operation           | Name          | Rows  | Bytes | Cost (%CPU)| Time
+    |
+
+--------------------------------------------------------------------------------
+-----
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT    |               |   199 | 17114 |     7  (15)| 00:00
+:01 |
+
+|*  1 |  HASH JOIN          |               |   199 | 17114 |     7  (15)| 00:00
+:01 |
+
+|   2 |   TABLE ACCESS FULL | STUDENT       |   100 |  3000 |     2   (0)| 00:00
+:01 |
+
+|*  3 |   HASH JOIN         |               |   199 | 11144 |     5  (20)| 00:00
+:01 |
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+
+|   4 |    TABLE ACCESS FULL| STUDENT       |   100 |  3000 |     2   (0)| 00:00
+:01 |
+
+|   5 |    TABLE ACCESS FULL| STUDENTFRIEND |   199 |  5174 |     2   (0)| 00:00
+:01 |
+
+--------------------------------------------------------------------------------
+-----
+
+PLAN_TABLE_OUTPUT
+--------------------------------------------------------------------------------
+Predicate Information (identified by operation id):
+---------------------------------------------------
+
+   1 - access("SF"."STUDENT_FRIEND_ID"="F"."ID")
+   3 - access("S"."ID"="SF"."STUDENT_ID")
+
+Note
+-----
+   - dynamic sampling used for this statement (level=2)
+
+22 rows selected.
+
+
+This uses HASH JOIN's because they are good for big joins and this is a self join table.
+Other than that not much needed to be done in order to make this query optimized.
