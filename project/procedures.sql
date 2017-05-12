@@ -1,5 +1,6 @@
 -- delete a user 
--- a lot of things need to be deleted when a user is deleted.
+-- a lot of things need to be deleted when a user/student is deleted.
+-- this makes sure all of the data used on a user is deleted.
 create or replace procedure deleteUser(userId in integer) as
     cursor schedulesDeleted is select id from Schedule where student_id = userid;
 begin
@@ -12,6 +13,7 @@ begin
     end loop;
     delete from Schedule where student_id = userId;
     delete from FriendGroup_Student where student_id = userId;
+    delete from Student where id = userId;
 end;
 /
 show errors;

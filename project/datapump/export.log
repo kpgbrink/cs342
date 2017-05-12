@@ -1,0 +1,37 @@
+;;; 
+Export: Release 11.2.0.2.0 - Production on Fri May 12 13:59:17 2017
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+Starting "KPB23"."SYS_EXPORT_SCHEMA_01":  kpb23/******** DIRECTORY=dpump_dirl 
+Estimate in progress using BLOCKS method...
+Processing object type SCHEMA_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 768 KB
+Processing object type SCHEMA_EXPORT/PRE_SCHEMA/PROCACT_SCHEMA
+Processing object type SCHEMA_EXPORT/TABLE/TABLE
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/INDEX
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+Processing object type SCHEMA_EXPORT/TABLE/INDEX/STATISTICS/INDEX_STATISTICS
+Processing object type SCHEMA_EXPORT/TABLE/COMMENT
+Processing object type SCHEMA_EXPORT/PROCEDURE/PROCEDURE
+Processing object type SCHEMA_EXPORT/PROCEDURE/ALTER_PROCEDURE
+Processing object type SCHEMA_EXPORT/VIEW/VIEW
+Processing object type SCHEMA_EXPORT/TABLE/CONSTRAINT/REF_CONSTRAINT
+. . exported "KPB23"."CLASSLINK"                         9.281 KB     100 rows
+. . exported "KPB23"."FRIENDGROUP"                       5.992 KB       8 rows
+. . exported "KPB23"."FRIENDGROUP_SCHEDULE"              5.609 KB      16 rows
+. . exported "KPB23"."FRIENDGROUP_STUDENT"               5.609 KB      16 rows
+. . exported "KPB23"."PLACEANDHOURS"                     9.242 KB     100 rows
+. . exported "KPB23"."SCHEDULE"                          12.73 KB     100 rows
+. . exported "KPB23"."SCHEDULE_CLASSLINK"                6.429 KB     100 rows
+. . exported "KPB23"."SCHEDULE_PLACEANDHOURS"            6.437 KB     100 rows
+. . exported "KPB23"."SCHEDULE_SIDEBARLINK"              6.429 KB     100 rows
+. . exported "KPB23"."SIDEBARLINK"                       9.710 KB     100 rows
+. . exported "KPB23"."STUDENT"                           12.76 KB     100 rows
+. . exported "KPB23"."STUDENTFRIEND"                     7.398 KB     199 rows
+Master table "KPB23"."SYS_EXPORT_SCHEMA_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for KPB23.SYS_EXPORT_SCHEMA_01 is:
+  C:\USERS\KRISTOFER\DESKTOP\SPRING2017\CS342\PROJECT\DATAPUMP\EXPDAT.DMP
+Job "KPB23"."SYS_EXPORT_SCHEMA_01" successfully completed at 14:00:04

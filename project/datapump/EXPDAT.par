@@ -1,0 +1,4 @@
+DIRECTORY=dpump_dirl
+DUMPFILE=EXPDAT.DMP 
+LOGFILE=export.log
+TABLES= Student, StudentFriend, Schedule, SideBarLink, Schedule_SideBarLink, PlaceAndHours, Schedule_PlaceAndHours, ClassLink, Schedule_ClassLink, FriendGroup, FriendGroup_Schedule, FriendGroup_Student
