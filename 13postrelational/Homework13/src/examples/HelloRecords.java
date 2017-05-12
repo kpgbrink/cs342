@@ -8,10 +8,10 @@ import oracle.kv.*;
 // id: firstName, lastName
 
 /**
- * Created by kpb23 on 5/11/2017.
- * Get the basic field values from the Movie table.
+ * Hello Records
  */
-public class GetTableValues {
+public class HelloRecords {
+
     public static void main(String[] args) {
         KVStore store = KVStoreFactory.getStore(new KVStoreConfig("kvstore", "localhost:5000"));
         // Using example keys
@@ -27,4 +27,5 @@ public class GetTableValues {
         
         store.close();
     }
+
 }

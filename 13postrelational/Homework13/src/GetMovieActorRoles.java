@@ -8,15 +8,15 @@ import oracle.kv.*;
 // id: firstName, lastName
 
 /**
- * Created by kpb23 on 5/11/2017.
- * Get the basic field values from the Movie table.
+ * Created by kpb23 on 5/12/2017.
+ * Get the roles, if any, for which a given actor is cast in a give movie. Sample execution:
  */
-public class GetTableValues {
+public class GetMovieActorRoles {
     public static void main(String[] args) {
         KVStore store = KVStoreFactory.getStore(new KVStoreConfig("kvstore", "localhost:5000"));
         // Using example keys
-        System.out.println("Table: Movie, ID: 92616");
-        Key majorKeyPathOnly = Key.createKey(Arrays.asList("movie", "92616"));
+        System.out.println("Movie ID: 92616, Actor ID: 429719");
+        Key majorKeyPathOnly = Key.createKey(Arrays.asList("movie", "92616", "actor", "429719"));
         
         Map<Key, ValueVersion> fields = store.multiGet(majorKeyPathOnly, null, null);
         for (Map.Entry<Key, ValueVersion> field : fields.entrySet()) {
