@@ -64,4 +64,5 @@ Note
 
 
 This uses HASH JOIN's because they are good for big joins and this is a self join table.
+Hash joins are fast but consume more memory than merge joins.
 Other than that not much needed to be done in order to make this query optimized.
