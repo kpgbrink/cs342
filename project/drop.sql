@@ -1,5 +1,8 @@
 
-
+-- drop tables in reverse order of them made.
+drop table FriendGroup_Student;
+drop table FriendGroup_Schedule;
+drop table FriendGroup;
 drop table Schedule_ClassLink;
 drop table ClassLink;
 drop table Schedule_PlaceAndHours;

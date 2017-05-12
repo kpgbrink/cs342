@@ -1,15 +1,5 @@
 
 
---GRANT CONNECT TO schedule_helper IDENTIFIED BY password;
---GRANT UNLIMITED TABLESPACE TO schedule_helper;
-
-
-
---@load.sql
-
--- Create the Schedule helper church user and database. 
--- See ../README.txt for details.
-
 -- Create the user.
 DROP USER kpb23 CASCADE;
 GRANT 

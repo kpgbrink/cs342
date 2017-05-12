@@ -15,8 +15,8 @@ CREATE TABLE Student (
 CREATE TABLE StudentFriend (
     student_id integer,
     student_friend_id integer,
-    foreign key (student_id) references Student(id),
-    foreign key (student_friend_id) references Student(id)
+    foreign key (student_id) references Student(id) on delete cascade,
+    foreign key (student_friend_id) references Student(id) on delete cascade
 );
 
 -- students can have schedules
@@ -28,7 +28,7 @@ CREATE TABLE Schedule (
     semester_year integer,
     link varchar(100), -- link to schedule from slate permutate
     permission varchar(50), -- me, friends, public
-    foreign key (student_id) references Student(id)
+    foreign key (student_id) references Student(id) on delete cascade
 );
 
 -- Data for common links you can add. 
@@ -43,8 +43,8 @@ CREATE TABLE SideBarLink (
 CREATE TABLE Schedule_SideBarLink (
     schedule_id integer,
     sidebarlink_id integer,
-    foreign key (schedule_id) references Schedule(id),
-    foreign key (sidebarlink_id) references SideBarLink(id)
+    foreign key (schedule_id) references Schedule(id) on delete cascade,
+    foreign key (sidebarlink_id) references SideBarLink(id) on delete cascade
 );
 
 -- Data for places and hours that can be shown.
@@ -59,8 +59,8 @@ CREATE TABLE PlaceAndHours (
 CREATE TABLE Schedule_PlaceAndHours (
     schedule_id integer,
     placeAndHours_id integer,
-    foreign key (schedule_id) references Schedule(id),
-    foreign key (placeAndHours_id) references PlaceAndHours(id)
+    foreign key (schedule_id) references Schedule(id) on delete cascade,
+    foreign key (placeAndHours_id) references PlaceAndHours(id) on delete cascade
 );
 
 -- Data for links to the class important webpages.
@@ -74,6 +74,35 @@ CREATE TABLE ClassLink (
 CREATE TABLE Schedule_ClassLink (
     schedule_id integer,
     classLink_id integer,
-    foreign key (schedule_id) references Schedule(id),
-    foreign key (classLink_id) references ClassLink(id)
+    foreign key (schedule_id) references Schedule(id) on delete cascade,
+    foreign key (classLink_id) references ClassLink(id) on delete cascade
 );
+
+-- Added for more relationships
+
+-- Data for groups of students who want to know other's schedules.
+CREATE TABLE FriendGroup (
+    id integer primary key,
+    creater_id integer,
+    name varchar(50),
+    foreign key (creater_id) references Student(id) on delete cascade
+);
+
+-- Schedules that are shared in the group
+CREATE TABLE FriendGroup_Schedule (
+    friendGroup_id integer,
+    schedule_id integer, 
+    foreign key (friendGroup_id) references FriendGroup(id) on delete cascade,
+    foreign key (schedule_id) references Schedule(id) on delete cascade
+);
+
+-- Students that are in the group
+CREATE TABLE FriendGroup_Student (
+    friendGroup_id integer,
+    student_id integer,
+    foreign key (friendGroup_id) references FriendGroup(id) on delete cascade,
+    foreign key (student_id) references Student(id) on delete cascade
+);
+
+
+

@@ -5,8 +5,9 @@
 -- make schema
 @schema.sql
 
+-- set constraints
+@constraints.sql
+
 -- make fake data
 @data.sql
 
--- set constraints
-@constraints.sql
