@@ -1,4 +1,4 @@
-
+-- original
 CREATE OR REPLACE PROCEDURE incrementRank
 	(movieIdIn IN Movie.id%type, 
 	 deltaIn IN integer
@@ -23,8 +23,8 @@ CREATE OR REPLACE PROCEDURE incrementRank
     ) AS
 	x Movie.rank%type;
 BEGIN
-    lock table Movie;
 	FOR i IN 1..50000 LOOP
+        lock table Movie;
 		SELECT rank INTO x FROM Movie WHERE id=movieIdIn;
 		UPDATE Movie SET rank=x+deltaIn WHERE id=movieIdIn;
 		COMMIT;
