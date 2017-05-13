@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="kvclient">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/kvclient.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
