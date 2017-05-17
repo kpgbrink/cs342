@@ -28,7 +28,7 @@ CREATE TABLE Schedule (
     semester_year integer,
     link varchar(100), -- link to schedule from slate permutate
     permission varchar(50), -- me, friends, public
-    foreign key (student_id) references Student(id) on delete cascade
+    foreign key (student_id) references Student(id) on delete set null
 );
 
 -- Data for common links you can add. 

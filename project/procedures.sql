@@ -1,4 +1,8 @@
+
+-- When a student is deleted their schedules are not automatically deleted. 
+-- This is so shared schedules don't get deleted but if I do want to have the option to delete it.
 -- delete a user 
+
 -- a lot of things need to be deleted when a user/student is deleted.
 -- this makes sure all of the data used on a user is deleted.
 create or replace procedure deleteUser(userId in integer) as
