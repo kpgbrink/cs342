@@ -16,3 +16,4 @@
 	BCNF because every non-trivial functional dependency is in one relation and the ids are on 
 	the left. Also everything without an id has multiple foreign keys that together are a primary
 	key. This satisfies 4NF because MVDs are seperated.
+	The only FD are from ID to the other field, and the IDs are all keys.

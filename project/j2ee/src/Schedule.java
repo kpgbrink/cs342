@@ -9,6 +9,8 @@ import java.util.List;
 
 
 /**
+ * Schedule is a RESTful service for my schedule database.
+ * @author: Kristofer Brink
  * Created by kpb23 on 5/12/2017.
  */
 @Stateless

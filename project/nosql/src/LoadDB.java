@@ -10,6 +10,8 @@ import static java.sql.JDBCType.NULL;
 // id: firstName, lastName
 
 /**
+ * LoadDB loads the Schedule database into KVlite
+ @author: Kristofer Brink
  * Created by kpb23 on 5/11/2017.
  */
 public class LoadDB {

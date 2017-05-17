@@ -8,6 +8,8 @@ import oracle.kv.*;
 // id: firstName, lastName
 
 /**
+ * GetScheduleValues: handles getting schedule data.
+ * @author: Kristofer Brink
  * Created by kpb23 on 5/11/2017.
  * Get the basic field values from the Movie table.
  */
